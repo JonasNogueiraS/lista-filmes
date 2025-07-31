@@ -1,12 +1,18 @@
-# React + Vite
+🎬 Lista de Filmes - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação web que consome uma API para listar os 10 filmes mais recentes lançados nos cinemas. A aplicação oferece funcionalidades para favoritar e desfavoritar filmes, além de permitir a visualização do trailer do filme diretamente do YouTube.
 
-Currently, two official plugins are available:
+⚙️ Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React: Biblioteca JavaScript para a construção da interface de usuário.
+- JavaScript: Linguagem de programação principal.
+- API: O projeto consome uma API para buscar os dados dos filmes.
+- CSS: Linguagem de estilo para a criação do design e layout das páginas.
+- React Router DOM: Biblioteca para gerenciar a navegação entre as diferentes rotas da aplicação.
 
-## Expanding the ESLint configuration
+✨ Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Listagem de Filmes: Exibe os 10 filmes mais recentes, obtidos através de uma API.
+- Favoritos: Permite ao usuário adicionar e remover filmes de uma lista de favoritos.
+- Trailer do YouTube: Possibilidade de assistir ao trailer de cada filme.
+- Design Responsivo: A interface se adapta a diferentes tamanhos de tela.
