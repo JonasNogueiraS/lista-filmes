@@ -2,12 +2,13 @@ import {useState, useEffect} from 'react'
 import api from '../../services/api';
 import { Link } from 'react-router-dom';
 import './home.css';
-// URL API: /movie/now_playing?api_key=2036df264b59354ad360c8e877a0294f&language=pt-BR
+
 
 function Home(){
 
     const [filmes, setFilmes] = useState([])
     const [carregar, setCarregar] = useState(true)
+    const [page, setPage] = useState(1)
 
     useEffect(()=>{
 
@@ -16,17 +17,27 @@ function Home(){
                 params:{
                     api_key:'2036df264b59354ad360c8e877a0294f',
                     language:'pt-BR',
-                    page: 1,
+                    page: page,
                 }
             })
             //console.log(resposta.data.results)
-            setFilmes(resposta.data.results.slice(0,10))
+            setFilmes(resposta.data.results)
             setCarregar(false)
         }
 
         carregarFilmes()
 
-    }, [])
+    }, [page])
+
+    function handleNextPage(){
+        setPage(page + 1)
+    }
+
+    function handlePrevPage(){
+        if(page > 1){
+            setPage(page - 1)
+        }
+    }
 
     if(carregar){
         return(
@@ -47,6 +58,11 @@ function Home(){
                         </article>
                     )
                 })}
+            </div>
+            <div className='pagination'>
+                <button onClick={handlePrevPage} disabled={page === 1}>Anterior</button>
+                <span>Página {page}</span>
+                <button onClick={handleNextPage}>Próxima</button>
             </div>
         </div>
     );
