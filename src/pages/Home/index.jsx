@@ -15,7 +15,7 @@ function Home(){
         async function carregarFilmes(){
             const resposta = await api.get("movie/now_playing",{
                 params:{
-                    api_key:'2036df264b59354ad360c8e877a0294f',
+                    api_key: import.meta.env.VITE_TMDB_API_KEY,
                     language:'pt-BR',
                     page: page,
                 }
